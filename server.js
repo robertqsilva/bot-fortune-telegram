@@ -28,7 +28,7 @@ app.listen(3000, () => {
 
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
-  bot.sendMessage(chatId, 'sevidor rodando papai');
+  return bot.sendMessage(chatId, 'sevidor rodando papai');
 });
 
 
@@ -53,23 +53,25 @@ const enviarMensagemAutomatica = async () => {
     reply_markup: JSON.stringify(tecladoInline)
   };
 
-  bot.sendMessage(grupo, mensagem, opcoesMensagem);
-
   setTimeout(finalizarEnvioDeMensagens, 180000);
+  return bot.sendMessage(grupo, mensagem, opcoesMensagem);
+
+  
 };
 
 const finalizarEnvioDeMensagens = async () => {
   const mensagemFinalizada = await `✅ Sinal Finalizado ✅\n` +
     `Bateu a meta? Volte amanhã!`;
 
-  bot.sendMessage(grupo, mensagemFinalizada);
+    setTimeout(mensagemAguarde,60000)
+  return bot.sendMessage(grupo, mensagemFinalizada);
 
-  setTimeout(mensagemAguarde,60000)
+  
 };
 
 const mensagemAguarde = async () => {
   const aguardeMsm = await `🔎 Aguarde, esperando por oportunidade...`
-  bot.sendMessage(grupo, aguardeMsm);
+  return bot.sendMessage(grupo, aguardeMsm);
 }
 
 
