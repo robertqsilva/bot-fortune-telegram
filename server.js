@@ -1,8 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const TelegramBot = require('node-telegram-bot-api');
+require('dotenv').config();
 
-const token = "6388038404:AAHk_8RSQk0y_TMbDUCAXfLNrFbhV6_SHUA"; 
+const token = process.env.TOKEN
 const bot = new TelegramBot(token, { polling: true });
 
 const grupo = "-1001776399915"; 
