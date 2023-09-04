@@ -24,7 +24,6 @@ const logger = createLogger({
   ),
   transports: [
     new transports.Console(),
-    // Adicione outros transportes, como um arquivo de log, se desejar
   ],
 });
 
