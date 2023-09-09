@@ -72,7 +72,7 @@ const finalizarEnvioDeMensagens = async () => {
   const mensagemFinalizada = await `✅ Sinal Finalizado ✅\n` +
     `Bateu a meta? Volte amanhã!`;
 
-  setTimeout(mensagemAguarde, 60000);
+  setTimeout(mensagemAguarde, 960000);
 
   // Registre a solicitação
   logger.info('Enviando mensagem de finalização ao grupo:', mensagemFinalizada);
@@ -89,4 +89,4 @@ const mensagemAguarde = async () => {
   return bot.sendMessage(grupo, aguardeMsm);
 };
 
-setInterval(enviarMensagemAutomatica, 300000);
+setInterval(enviarMensagemAutomatica, 1200000);
