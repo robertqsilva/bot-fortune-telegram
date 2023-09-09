@@ -35,7 +35,7 @@ app.post('/bot', async (req, res) => {
   }
 });
 
-app.listen(PORTA || 3000, () => {
+app.listen(443, () => {
   console.log('Servidor rodando na porta 3000');
 });
 
