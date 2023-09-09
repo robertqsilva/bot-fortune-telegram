@@ -27,12 +27,8 @@ const logger = createLogger({
   ],
 });
 
-app.post('/bot', async (req, res) => {
-  const mensagem = await req.body.server;
-
-  if (mensagem === '?') {
+app.get('/bot', async (req, res) => {
     return res.status(200).json({ mensagem: "servidor on papai" });
-  }
 });
 
 app.listen(443, () => {
