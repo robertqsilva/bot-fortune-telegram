@@ -13,9 +13,9 @@ const app = express();
 
 app.use(bodyParser.json());
 
-// Configuração do logger
+
 const logger = createLogger({
-  level: 'debug', // ou 'debug' para ver mais detalhes
+  level: 'debug', 
   format: format.combine(
     format.timestamp(),
     format.printf(({ timestamp, level, message }) => {
@@ -47,7 +47,7 @@ bot.onText(/\/start/, (msg) => {
 const enviarMensagemAutomatica = async () => {
   const mensagem = await `✅ Oportunidade Encontrada ✅\n\n` +
     `🐯 Fortune Tiger\n` +
-    `🎰 N° Máximo Jogadas: 6\n` +
+    `🎰 N° Máximo Jogadas: 10\n` +
     `⏳ Validade: 3 minutos`;
 
   const tecladoInline = await {
@@ -67,7 +67,6 @@ const enviarMensagemAutomatica = async () => {
 
   setTimeout(finalizarEnvioDeMensagens, 180000);
 
-  // Registre a solicitação
   logger.info('Enviando mensagem automática ao grupo:', mensagem);
 
   return bot.sendMessage(grupo, mensagem, opcoesMensagem);
@@ -94,4 +93,4 @@ const mensagemAguarde = async () => {
   return bot.sendMessage(grupo, aguardeMsm);
 };
 
-setInterval(enviarMensagemAutomatica, 600000);
+setInterval(enviarMensagemAutomatica, 300000);
