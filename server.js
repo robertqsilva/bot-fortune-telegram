@@ -1,6 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const TelegramBot = require('node-telegram-bot-api');
+const cron = require('node-cron');
+const axios = require('axios');
+
 const { createLogger, transports, format } = require('winston');
 require('dotenv').config();
 
@@ -30,6 +33,19 @@ const logger = createLogger({
 app.get('/bot', async (req, res) => {
     return res.status(200).json({ mensagem: "servidor on papai" });
 });
+
+
+// Agendamento para fazer uma solicitação a cada 5 minutos
+cron.schedule('*/5 * * * *', () => {
+  axios.get('https://api-fortune-tig.onrender.com/bot')
+    .then((response) => {
+      console.log('Solicitação de manutenção enviada com sucesso');
+    })
+    .catch((error) => {
+      console.error('Erro ao enviar a solicitação de manutenção:', error.message);
+    });
+});
+
 
 app.listen(443, () => {
   console.log('Servidor rodando na porta 3000');
