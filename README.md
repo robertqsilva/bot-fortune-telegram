@@ -113,11 +113,15 @@ Depois de configurar as variáveis de ambiente e instalar as dependências, voc�
 node ./server.js
 ```
 
-
 Se tudo estiver configurado corretamente e as dependências estiverem instaladas, seu bot do Telegram deve começar a funcionar e você verá mensagens de registro no console.
 
 Lembre-se de que você também pode precisar ajustar algumas configurações específicas do seu projeto, dependendo de sua lógica de negócios e requisitos adicionais. Certifique-se de ler o código e entender como ele funciona para personalizá-lo conforme necessário.
 
 ---
+
+### Bot Em Produção
+
+<img src="https://media.licdn.com/dms/image/D4D2DAQGeDHtGs44nuw/profile-treasury-image-shrink_1920_1920/0/1693926025520?e=1695247200&v=beta&t=3AYlBaPa5tWpkY4w3e52N0w9lf47vlV6PUNwysoOvHw" width="630" height="400" alt="Bot Em Produção">
+
 
 Esta documentação fornece uma visão geral dos principais componentes e funcionalidades do projeto do bot do Telegram. Para executar e manter o bot, certifique-se de que as dependências necessárias estejam instaladas e configuradas corretamente. Além disso, verifique se as variáveis de ambiente, incluindo o token do bot do Telegram, estão definidas adequadamente.
